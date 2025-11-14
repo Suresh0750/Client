@@ -25,7 +25,7 @@ export function isWorkerProtectedRoute (pathname: string): boolean{
 export async function productOtp(req:NextRequest){
     const token = req.cookies.get('token')
     console.log('otp token')
-
+    console.log(`${token?.value} token value`)
     if (!token?.value) {
         return false;
     }

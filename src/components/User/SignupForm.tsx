@@ -61,6 +61,28 @@ export function SignupForm() {
       console.log(res);
 
       if (res.success) {
+        // Create OTP token after successful signup
+        try {
+          const tokenResponse = await fetch('/api/setOtpToken', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            credentials: 'include', // Important: include credentials to set cookies
+            body: JSON.stringify({ userId: res.user }),
+          });
+
+          const tokenData = await tokenResponse.json();
+          
+          if (!tokenData.success) {
+            console.error('Failed to create OTP token:', tokenData.message);
+            // Continue anyway, but log the error
+          }
+        } catch (tokenError) {
+          console.error('Error creating OTP token:', tokenError);
+          // Continue anyway, but log the error
+        }
+
         toast.success('🎉 User registration successful!');
         setTimeout(() => {
           router.replace(`/user/userOtp/${res.user}`);

@@ -119,49 +119,52 @@ const Home = () => {
         </div>
       </section> */}
       {/* Services Section */}
-      <section className="py-12 bg-gray-100">
-        <div className="container mx-auto">
-          <h2 className="text-center text-3xl font-bold mb-6">Modern Elegant Design Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {
-            mechanic?.length>0 && (
-              <>
-              <div className="bg-white p-6 rounded shadow cursor-pointer" onClick={()=>handleRedirectWorkerPage(mechanic?.[0]?._id,mechanic?.[0])}>
-              
-                  <Image src={mechanic?.[0]?.profile} alt="Service 1" width={400} height={300} />
-                  <h3 className="text-xl font-bold mt-4">{mechanic?.[0]?.firstName}</h3>
-                  <div className="flex items-center text-gray-500 mt-2">
-                        <AiTwotoneEnvironment className="mr-1" />
-                        <span>{mechanic?.[0]?.streetAddress}</span>
-                  </div>
+      {
+        mechanic?.length>0 && (
+          <section className="py-12 bg-gray-100">
+          <div className="container mx-auto">
+            <h2 className="text-center text-3xl font-bold mb-6">Modern Elegant Design Services</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+                <>
+                <div className="bg-white p-6 rounded shadow cursor-pointer" onClick={()=>handleRedirectWorkerPage(mechanic?.[0]?._id,mechanic?.[0])}>
+                
+                    <Image src={mechanic?.[0]?.profile} alt="Service 1" width={400} height={300} />
+                    <h3 className="text-xl font-bold mt-4">{mechanic?.[0]?.firstName}</h3>
+                    <div className="flex items-center text-gray-500 mt-2">
+                          <AiTwotoneEnvironment className="mr-1" />
+                          <span>{mechanic?.[0]?.streetAddress}</span>
+                    </div>
+            
+                </div>
+                <div className="bg-white p-6 rounded shadow cursor-pointer" onClick={()=>handleRedirectWorkerPage(mechanic?.[1]?._id,mechanic?.[1])}>
+                  
+                    <Image src={mechanic?.[1]?.profile} alt="Service 2" width={400} height={300} />
+                    <h3 className="text-xl font-bold mt-4">{mechanic?.[1]?.firstName}</h3>
+                    <div className="flex items-center text-gray-500 mt-2">
+                          <AiTwotoneEnvironment className="mr-1" />
+                          <span>{mechanic?.[1]?.streetAddress}</span>
+                    </div>
+                  
+                </div>
+                <div className="bg-white p-6 rounded shadow cursor-pointer" onClick={()=>handleRedirectWorkerPage(mechanic?.[2]?._id,mechanic?.[2])}>
+                 
+                    <Image src={mechanic?.[2]?.profile} alt="Service 3" width={400} height={300} />
+                    <h3 className="text-xl font-bold mt-4">{mechanic?.[2]?.firstName}</h3>
+                    <div className="flex items-center text-gray-500 mt-2">
+                          <AiTwotoneEnvironment className="mr-1" />
+                          <span>{mechanic?.[2]?.streetAddress}</span>
+                    </div>
+                 
+                </div>
+                </>
           
-              </div>
-              <div className="bg-white p-6 rounded shadow cursor-pointer" onClick={()=>handleRedirectWorkerPage(mechanic?.[1]?._id,mechanic?.[1])}>
-                
-                  <Image src={mechanic?.[1]?.profile} alt="Service 2" width={400} height={300} />
-                  <h3 className="text-xl font-bold mt-4">{mechanic?.[1]?.firstName}</h3>
-                  <div className="flex items-center text-gray-500 mt-2">
-                        <AiTwotoneEnvironment className="mr-1" />
-                        <span>{mechanic?.[1]?.streetAddress}</span>
-                  </div>
-                
-              </div>
-              <div className="bg-white p-6 rounded shadow cursor-pointer" onClick={()=>handleRedirectWorkerPage(mechanic?.[2]?._id,mechanic?.[2])}>
-               
-                  <Image src={mechanic?.[2]?.profile} alt="Service 3" width={400} height={300} />
-                  <h3 className="text-xl font-bold mt-4">{mechanic?.[2]?.firstName}</h3>
-                  <div className="flex items-center text-gray-500 mt-2">
-                        <AiTwotoneEnvironment className="mr-1" />
-                        <span>{mechanic?.[2]?.streetAddress}</span>
-                  </div>
-               
-              </div>
-              </>
-            )
-            }
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+        )
+      }
+     
     {/* New Missing Section: Explore Our Expertise */}
     <section id="expertise" className="py-16 bg-gray-100 text-center">
             <h2 className="text-3xl font-bold">Explore Our Expertise</h2>

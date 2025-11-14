@@ -102,8 +102,6 @@ export default function WorkerSignUp() {
         <h2 className="text-3xl font-extrabold text-center mb-6 text-slate-800">
           Personal Information
         </h2>
-        <Toaster richColors position="top-right" />
-
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}

@@ -1,7 +1,6 @@
 // components/UserOtp.tsx
 
 import OtpImage from "@/components/OtpPageImage/OtpsidePage";
-import { useParams } from "next/navigation";
 import InputOtp from '../../../../../components/OtpInput/Input'
 
 export default function UserOtp({params}:{params:any}) {
